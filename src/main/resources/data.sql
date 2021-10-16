@@ -1,0 +1,1 @@
+insert into tb_visitor (visitor_id, name, instant_registration) values (101010, 'Charles Oliveira', NOW());
