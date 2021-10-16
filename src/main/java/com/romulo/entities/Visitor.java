@@ -6,6 +6,7 @@ import java.time.Instant;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
 @Entity
@@ -52,7 +53,10 @@ public class Visitor implements Serializable {
 		return instantRegistration;
 	}
 
-	
+	@PrePersist
+	public void prePersist() {
+		instantRegistration = Instant.now();
+	}
 
 
 	
